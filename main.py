@@ -1,6 +1,32 @@
 import pygame
 import random
+gameselection==input("Choose a game to play.")
+if gameselection=.lower("SPACE INVADERS")
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### GAMEMODE OF SPACE INVADERS 
 # Initialize Pygame
 pygame.init()
 
