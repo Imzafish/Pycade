@@ -1,0 +1,72 @@
+{
+    "throw": [
+        "chuck",
+        "toss",
+        "remove",
+        "hurl",
+        "yeet"
+    ],
+    "move": [
+        "walk",
+        "go",
+        "head",
+        "find",
+        "travel",
+        "ride"
+    ],
+    "stick": [
+        "twig"
+    ],
+    "mountains": [
+        "mount",
+        "mounts",
+        "mountain"
+    ],
+    "mountains in distance": [
+        "mount",
+        "mounts",
+        "mountain"
+    ],
+    "rock": [
+        "pebble",
+        "pebbles",
+        "stones",
+        "stone"
+    ],
+    "the": [
+        "le",
+        "da"
+    ],
+    "hit": [
+        "hurt",
+        "annoy",
+        "destroy"
+    ],
+    "take": [
+        "grab",
+        "keep"
+    ],
+    "smash": [
+        "break"
+    ],
+    "open": [
+        "claim"
+    ],
+    "talk": [
+        "chat",
+        "converse"
+    ],
+    "drink": [
+        "chug"
+    ],
+    "push": [
+        "shove"
+    ],
+    "potion": [
+        "health potion",
+        "health"
+    ],
+    "miniboss": [
+        "boss"
+    ]
+}

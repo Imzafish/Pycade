@@ -1,0 +1,684 @@
+{
+  "card": {
+    "title": "The forest of wonder",
+    "author": "Max",
+    "description": "This is the forest, where you must go and find the legendary pool of the daemons. This mythical location is rumoured to be hidden deep within this forest. You are on a quest to find it and claim the ultimate treasure... The Gaurof Sword."
+  },
+  "rooms": {
+    "1": {
+      "name": "forest",
+      "description": "This is a forest. The trees are thick, and there are a few creatures that if you try to look at run away.",
+      "dark": false,
+      "shape": 0,
+      "exits": {
+        "0": 2,
+        "2": 5,
+        "6": 7,
+        "4": 9
+      },
+      "objects": [
+        {
+          "name": "stick",
+          "identifier": "stick",
+          "description": "a fallen branch",
+          "content": [],
+          "type": 5
+        },
+        {
+          "name": "mountains",
+          "identifier": "mountains in distance",
+          "description": "",
+          "content": [],
+          "type": 6
+        }
+      ]
+    },
+    "2": {
+      "name": "river",
+      "description": "",
+      "dark": false,
+      "shape": 0,
+      "exits": {
+        "4": 2
+      },
+      "objects": [
+        {
+          "name": "river",
+          "identifier": "river",
+          "description": "a big wide river that blocks your path. How would you cross it?",
+          "content": [],
+          "type": 5
+        },
+        {
+          "name": "rock",
+          "identifier": "rock",
+          "description": "sleek and wet pebbles",
+          "content": [],
+          "type": 5
+        },
+        {
+          "name": "trees",
+          "identifier": "trees blocking your view",
+          "description": "There is more of a dense coverage of trees this time. You can't see anything in the distance.",
+          "content": [],
+          "type": 6
+        }
+      ]
+    },
+    "5": {
+      "name": "the boulder",
+      "description": "There is a big boulder blocking your path as you wander up this way. How will you get past?",
+      "dark": false,
+      "shape": 0,
+      "exits": {
+        "5": 1,
+        "0": 42
+      },
+      "objects": [
+        {
+          "name": "boulder",
+          "identifier": "a big boulder",
+          "description": "It is blocking your path",
+          "content": [],
+          "type": 5
+        }
+      ]
+    },
+    "7": {
+      "name": "hill",
+      "description": "On the top of the hill you can see a little. Here there is little trees.",
+      "dark": false,
+      "shape": 0,
+      "exits": {
+        "2": 1,
+        "4": 23,
+        "0": 30
+      },
+      "objects": [
+        {
+          "name": "river",
+          "identifier": "a river",
+          "description": "You see a river that blocks your path to the north of where you started",
+          "content": [],
+          "type": 6
+        },
+        {
+          "name": "boulder",
+          "identifier": "a boulder",
+          "description": "You see a big boulder to the right of where you started",
+          "content": [],
+          "type": 6
+        },
+        {
+          "name": "camp",
+          "identifier": "a monster camp",
+          "description": "You see a monster camp to the south of where you started",
+          "content": [],
+          "type": 6
+        },
+        {
+          "name": "mountain",
+          "identifier": "a mountain",
+          "description": "You can see a mountain in the distance some way away from where you started",
+          "content": [],
+          "type": 6
+        },
+        {
+          "name": "trees",
+          "identifier": "trees",
+          "description": "Trees blocking what looks important to the south",
+          "content": [],
+          "type": 6
+        }
+      ]
+    },
+    "9": {
+      "name": "monster camp",
+      "description": "",
+      "dark": false,
+      "shape": 0,
+      "exits": {
+        "0": 1,
+        "6": 11,
+        "4": 19
+      },
+      "objects": [
+        {
+          "name": "staircase",
+          "identifier": "spiral staircase",
+          "description": "A staircase that leads up into the monster camp",
+          "content": [],
+          "type": 5
+        },
+        {
+          "name": "post",
+          "identifier": "lookout post",
+          "description": "Thankfully they don't see you because of the trees",
+          "content": [],
+          "type": 5
+        },
+        {
+          "name": "bokoblin",
+          "identifier": "bokoblin",
+          "description": "A monster bent on killing you",
+          "content": [],
+          "type": 4
+        }
+      ]
+    },
+    "11": {
+      "name": "the monster camp level 1",
+      "description": "This is the first level of the monster camp. The higher you get, the harder the monsters.",
+      "dark": false,
+      "shape": 0,
+      "exits": {
+        "2": 9,
+        "6": 13
+      },
+      "objects": [
+        {
+          "name": "bokoblin",
+          "identifier": "bokoblin",
+          "description": "It has a sword",
+          "content": [],
+          "type": 4
+        }
+      ]
+    },
+    "13": {
+      "name": "the monster camp level 2",
+      "description": "",
+      "dark": false,
+      "shape": 0,
+      "exits": {
+        "2": 11,
+        "6": 15
+      },
+      "objects": [
+        {
+          "name": "outline",
+          "identifier": "faint outline of a mountain",
+          "description": "You can faintly see if you look hard enough a mountain with many apple trees in the distance",
+          "content": [],
+          "type": 6
+        },
+        {
+          "name": "stick",
+          "identifier": "stick",
+          "description": "it's a random twig",
+          "content": [],
+          "type": 5
+        },
+        {
+          "name": "stick",
+          "identifier": "stick",
+          "description": "",
+          "content": [],
+          "type": 5
+        }
+      ]
+    },
+    "15": {
+      "name": "monster camp level 3",
+      "description": "The monsters here are at there worst.",
+      "dark": false,
+      "shape": 0,
+      "exits": {
+        "2": 13,
+        "6": 17
+      },
+      "objects": [
+        {
+          "name": "bokoblin",
+          "identifier": "bokoblin",
+          "description": "",
+          "content": [],
+          "type": 4
+        },
+        {
+          "name": "bokoblin",
+          "identifier": "bokoblin",
+          "description": "",
+          "content": [],
+          "type": 4
+        },
+        {
+          "name": "miniboss",
+          "identifier": "miniboss",
+          "description": "the big baddy",
+          "content": [],
+          "type": 4
+        }
+      ]
+    },
+    "17": {
+      "name": "monster camp level 4",
+      "description": "",
+      "dark": false,
+      "shape": 0,
+      "exits": {
+        "2": 15
+      },
+      "objects": [
+        {
+          "name": "jeremy",
+          "identifier": "jeremy",
+          "description": "A local who knows about where you are going and helps make a bridge across the river... if you have enough wood",
+          "content": [],
+          "type": 4
+        },
+        {
+          "name": "key",
+          "identifier": "key",
+          "description": "key to a house",
+          "content": [],
+          "type": 5
+        },
+        {
+          "name": "chest",
+          "identifier": "chest",
+          "description": "It has a sword in it (at last)",
+          "content": [],
+          "type": 5
+        }
+      ]
+    },
+    "19": {
+      "name": "clearing",
+      "description": "This is a clearing in the forest. If you have Jeremy then a glowing blue stag leaps out and Jeremy identifies it as the creatures you need to find. Then he follows the stag and brings you off the path to somewhere special...",
+      "dark": false,
+      "shape": 0,
+      "exits": {
+        "0": 9
+      },
+      "objects": [
+        {
+          "name": "stick",
+          "identifier": "stick",
+          "description": "",
+          "content": [],
+          "type": 5
+        },
+        {
+          "name": "potion",
+          "identifier": "health potion",
+          "description": "",
+          "content": [],
+          "type": 5
+        }
+      ]
+    },
+    "21": {
+      "name": "lots of trees",
+      "description": "As you walk through the trees you see a fallen tree - it's HUGE! You could make a whole boat out of it *hint hint*",
+      "dark": false,
+      "shape": 0,
+      "exits": {
+        "6": 5
+      },
+      "objects": [
+        {
+          "name": "trunk",
+          "identifier": "big hollow fallen tree trunk ",
+          "description": "Jeremy can use this to make a tree... If he had a saw",
+          "content": [],
+          "type": 5
+        },
+        {
+          "name": "bokoblin",
+          "identifier": "bokoblin",
+          "description": "",
+          "content": [],
+          "type": 4
+        },
+        {
+          "name": "bokoblin",
+          "identifier": "bokoblin",
+          "description": "",
+          "content": [],
+          "type": 4
+        },
+        {
+          "name": "bokoblin",
+          "identifier": "bokoblin",
+          "description": "",
+          "content": [],
+          "type": 4
+        },
+        {
+          "name": "bokoblin",
+          "identifier": "bokoblin",
+          "description": "",
+          "content": [],
+          "type": 4
+        }
+      ]
+    },
+    "23": {
+      "name": "house",
+      "description": "In this part of the forest you see a house. It has a locked door.",
+      "dark": false,
+      "shape": 0,
+      "exits": {
+        "0": 7
+      },
+      "objects": [
+        {
+          "name": "house",
+          "identifier": "house",
+          "description": "A house with a locked door",
+          "content": [],
+          "type": 5
+        },
+        {
+          "name": "inside",
+          "identifier": "inside the dark house",
+          "description": "You can see an outline of a bed through a window, but the house is very dark so that's it.",
+          "content": [],
+          "type": 6
+        }
+      ]
+    },
+    "25": {
+      "name": "somewhere special",
+      "description": "This is a special place - it is the place where glowing blue and yellow stags meet. The blue are the male and the yellow are the female. They are all snuggling. It is so dark, but the stags light everything up. They do this for a while before you decide to get closer and they get scared. They all run away. You reach out for them but to no avail. Next time you should bring your camera. \nBut you can see a saw near a tree. They must have brought it here so the people couldn't chop down the trees.",
+      "dark": false,
+      "shape": 0,
+      "exits": {
+        "6": 19
+      },
+      "objects": [
+        {
+          "name": "saw",
+          "identifier": "saw",
+          "description": "",
+          "content": [],
+          "type": 5
+        }
+      ]
+    },
+    "26": {
+      "name": "inside the house level 1",
+      "description": "Inside the house it is very dark. You can barely see a thing.",
+      "dark": true,
+      "shape": 0,
+      "exits": {
+        "2": 23,
+        "0": 28
+      },
+      "objects": [
+        {
+          "name": "spider",
+          "identifier": "spider",
+          "description": "Bites your toe",
+          "content": [],
+          "type": 5
+        },
+        {
+          "name": "post",
+          "identifier": "lamp post",
+          "description": "Hits your head",
+          "content": [],
+          "type": 5
+        },
+        {
+          "name": "staircase",
+          "identifier": "staircase",
+          "description": "you trip on it and graze your knee",
+          "content": [],
+          "type": 5
+        },
+        {
+          "name": "potion",
+          "identifier": "health potion",
+          "description": "",
+          "content": [],
+          "type": 5
+        },
+        {
+          "name": "potion",
+          "identifier": "health potion",
+          "description": "",
+          "content": [],
+          "type": 5
+        }
+      ]
+    },
+    "28": {
+      "name": "inside the house level 2",
+      "description": "",
+      "dark": true,
+      "shape": 0,
+      "exits": {
+        "4": 26
+      },
+      "objects": [
+        {
+          "name": "bed",
+          "identifier": "bed",
+          "description": "the springs scare you to bits as they randomly spring out",
+          "content": [],
+          "type": 5
+        },
+        {
+          "name": "closet",
+          "identifier": "closet",
+          "description": "has inside it a ladder",
+          "content": [],
+          "type": 5
+        }
+      ]
+    },
+    "30": {
+      "name": "tree blocks your path",
+      "description": "A HUGE tree blocks your path. It is covered in thorns. How will you get past?",
+      "dark": false,
+      "shape": 0,
+      "exits": {
+        "4": 7
+      },
+      "objects": []
+    },
+    "33": {
+      "name": "mountain",
+      "description": "You slowly climb up the mountain...\nIt has become night time and it is raining.",
+      "dark": true,
+      "shape": 1,
+      "exits": {
+        "4": 2,
+        "2": 35
+      },
+      "objects": [
+        {
+          "name": "tree",
+          "identifier": "apple tree",
+          "description": "tree full of apples",
+          "content": [
+            {
+              "name": "apple",
+              "identifier": "apple",
+              "description": "food :)",
+              "content": [],
+              "type": 5
+            }
+          ],
+          "type": 5
+        },
+        {
+          "name": "box",
+          "identifier": "a phone box",
+          "description": "This prevents Jeremy from going any further",
+          "content": [],
+          "type": 5
+        },
+        {
+          "name": "potion",
+          "identifier": "health potion",
+          "description": "",
+          "content": [],
+          "type": 5
+        }
+      ]
+    },
+    "35": {
+      "name": "further up the mountain",
+      "description": "There is a big hinox that is blocking your way. You will need to fight it!",
+      "dark": true,
+      "shape": 2,
+      "exits": {
+        "1": 38
+      },
+      "objects": [
+        {
+          "name": "hinox",
+          "identifier": "hinox",
+          "description": "The biggest, fattest monster alive",
+          "content": [],
+          "type": 4
+        }
+      ]
+    },
+    "37": {
+      "name": "top of the mountain",
+      "description": "It is night. The stars are bright. Insert the rest of the deeply spiritual text I inputted earlier here on how a glowing stag leads you to the place and nice things happen and yay! The end!",
+      "dark": true,
+      "shape": 0,
+      "exits": {},
+      "objects": [
+        {
+          "name": "sword",
+          "identifier": "the gaurof sword",
+          "description": "The sword that Lonk pulled and accidentally destroyed his town with the Tiwlight Raelm",
+          "content": [],
+          "type": 5
+        }
+      ]
+    },
+    "38": {
+      "name": "the top of the mountain",
+      "description": "It is thundering. Insert rest of text here on how you don't see anything and so go to sleep for the night.",
+      "dark": true,
+      "shape": 0,
+      "exits": {},
+      "objects": []
+    },
+    "40": {
+      "name": "top of mountain day",
+      "description": "It is day. You still don't see any creatures. What do you do?",
+      "dark": false,
+      "shape": 0,
+      "exits": {
+        "4": 37
+      },
+      "objects": [
+        {
+          "name": "tree",
+          "identifier": "tree",
+          "description": "",
+          "content": [],
+          "type": 5
+        },
+        {
+          "name": "stick",
+          "identifier": "stick",
+          "description": "",
+          "content": [],
+          "type": 5
+        },
+        {
+          "name": "rock",
+          "identifier": "rock",
+          "description": "",
+          "content": [],
+          "type": 5
+        },
+        {
+          "name": "band",
+          "identifier": "elastic band",
+          "description": "",
+          "content": [],
+          "type": 5
+        },
+        {
+          "name": "bokoblin",
+          "identifier": "bokoblin",
+          "description": "",
+          "content": [],
+          "type": 4
+        },
+        {
+          "name": "potion",
+          "identifier": "health potion",
+          "description": "",
+          "content": [],
+          "type": 5
+        }
+      ]
+    },
+    "42": {
+      "name": "abandoned house",
+      "description": "Outside the abandoned house you can still see the light of a fire once lit.",
+      "dark": false,
+      "shape": 0,
+      "exits": {
+        "4": 5,
+        "2": 44
+      },
+      "objects": []
+    },
+    "44": {
+      "name": "in the abandoned house",
+      "description": "In the house... it is a house. TODO: fill this in.",
+      "dark": false,
+      "shape": 0,
+      "exits": {
+        "6": 42,
+        "2": 46
+      },
+      "objects": [
+        {
+          "name": "bokoblin",
+          "identifier": "bokoblin",
+          "description": "",
+          "content": [],
+          "type": 4
+        },
+        {
+          "name": "bokoblin",
+          "identifier": "bokoblin",
+          "description": "",
+          "content": [],
+          "type": 4
+        }
+      ]
+    },
+    "46": {
+      "name": "deeper in the abandoned house",
+      "description": "",
+      "dark": true,
+      "shape": 0,
+      "exits": {
+        "6": 44
+      },
+      "objects": [
+        {
+          "name": "chest",
+          "identifier": "chest",
+          "description": "",
+          "content": [],
+          "type": 5
+        },
+        {
+          "name": "banner",
+          "identifier": "a banner saying 'well done'",
+          "description": "",
+          "content": [],
+          "type": 5
+        }
+      ]
+    }
+  },
+  "actions": {},
+  "startRoom": 0,
+  "endRoom": 37
+}

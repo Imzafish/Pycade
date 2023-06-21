@@ -1,0 +1,116 @@
+{% from 'bootstrap5/form.html' import render_form %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Our assessment task</title>
+
+    {{ bootstrap.load_css() }}
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mouse.css') }}">
+
+    <style>
+      body {
+        background: #10968c;
+      }
+      select.form-select {
+        background-color: #a7d8d8;
+      }
+      input.form-control {
+        background-color: #a7d8d8;
+      }
+      input {cursor:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAzElEQVRYR+2X0Q6AIAhF5f8/2jYXZkwEjNSVvVUjDpcrGgT7FUkI2D9xRfQETwNIiWO85wfINfQUEyxBG2ArsLwC0jioGt5zFcwF4OYDPi/mBYKm4t0U8ATgRm3ThFoAqkhNgWkA0jJLvaOVSs7j3qMnSgXWBMiWPXe94QqMBMBc1VZIvaTu5u5pQewq0EqNZvIEMCmxAawK0DNkay9QmfFNAJUXfgGgUkLaE7j/h8fnASkxHTz0DGIBMCnBeeM7AArpUd3mz2x3C7wADglA8BcWMZhZAAAAAElFTkSuQmCC) 14 0,pointer !important}
+      body {position:sticky;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+      }
+      p {white-space: pre-line}
+      h1 {display: inline}
+      p.lead {
+        font-style: oblique;
+        font-family: monospace;
+      }
+    </style>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ordering.css') }}">
+
+    <style>
+      .row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas:  "text-rname text-title"
+                              "text-rdesc text-rstuf"
+                              "text-prmsg text-savem"
+                              "form-gamef form-gamef"
+                              "text-ginfo text-ginfo"
+                              "form-savef form-savef"
+                              "text-glogs text-glogs";
+        height: 100vh;
+      }
+      /*FYI
+      text-title = title of the map
+      text-rname = room name
+      text-rdesc = room description
+      text-savem = save message (success/failiure)
+      text-prmsg = print message (the output of your actions)
+      form-gamef = form game (the form to input the action you are going to do)
+      form-savef = form save (the form to save your game)
+      text-rdesc = room description
+      text-glogs = game logs
+      text-rstuf = room stuff
+      text-ginfo = game info
+      */
+    </style>
+    <style>
+      h2{
+        font-size: 4rem;
+        font-family: fangsong;
+      }
+      h3{
+        font-family: fangsong;
+        font-style: oblique;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+	TIPS about using Bootstrap-Flask:
+	https://github.com/helloflask/bootstrap-flask
+	https://bootstrap-flask.readthedocs.io/
+    -->
+
+    <div class="container">
+      <div class="row">
+        <!--div class="col-md-10 col-lg-8 mx-lg-auto mx-md-auto"-->
+          <div class="text-rname">
+            <h2>{{ roomname }}</h2>
+          </div> 
+          <div class="text-title"><h1 class="pt-5 pb-2">{{ title }}</h1></div>
+          <div class="text-rdesc">
+            <h3>{{ desc }}</h3>
+          </div>
+          <div class="text-rstuf">
+            <p class="lead">{{ bigdesc }}</p>
+          </div>
+          <span class="pt-5" id="text-prmsg">
+            <strong>{{ message }}</strong>
+          </span>
+          <div class="text-savem"><h2>{{ savemsg }}</h2></div>
+          <div class="form-gamef">{{ render_form(form) }}</div>
+          <div class="text-ginfo"><p>{{ gameinfo }}</p></div>
+          <br>
+          <div class="form-savef">{{ render_form(form2) }}</div>
+          <div class="text-glogs"><p>logs:</p>
+          <p>{{ logs }}</p></div>
+        <!--/div-->
+      </div>
+    </div>
+
+    {{ bootstrap.load_js() }}
+  </body>
+</html>

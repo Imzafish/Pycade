@@ -1,7 +1,9 @@
 import pygame
 import random
-gameselection==input("Choose a game to play.")
-if gameselection=.lower("SPACE INVADERS")
+gameselection=input("Choose a game to play.")
+if gameselection==.lower("SPACE INVADERS")
+    print("Game starting..")
+
 
 
 

@@ -1,0 +1,54 @@
+{
+    "marker_tags": 
+        {
+            "nsubj": "subj", 
+            "prep": "$$", 
+            "advmod": "$$",
+            "amod": "$$",
+            "pobj": "obj", 
+            "dobj": "subjobj", 
+            "xcomp": "action",
+            "prt": "$$",
+            "npadvmod": "$$",
+            "poss": "owns",
+            "cc": "and",
+            "det": "is",
+            "advcl": "is2",
+            "aux": "to",
+            "compound": "$$",
+            "attr": "$$",
+            "ROOT": "action",
+            "conj": "connect"
+        },
+    "dollars_wrds":
+        {
+            "of": "what",
+            "on": "where",
+            "up": "move",
+            "down": "move",
+            "left": "move",
+            "right": "move",
+            "north": "move",
+            "northeast": "move",
+            "northwest": "move",
+            "south": "move",
+            "southeast": "move",
+            "southwest": "move",
+            "east": "move",
+            "west": "move",
+            "in": "move",
+            "out": "move",
+            "debug": "action",
+            "to": "with",
+            "with": "with",
+            "exit": "exit",
+            "for": "what",
+            "just": "time",
+            "beautiful": "feature",
+            "blue": "colour"
+        },
+    "other_names":
+        {
+            "subjobj": "name"
+        }
+}

@@ -1,0 +1,46 @@
+{
+        "throw":
+            {"subjobj": 1,
+            "action#doable": [
+                "00You threw it and it came back down to rest.;3'throw'",
+                "00You threw it and it flew off into the sunset never to be seen again.;6~!!5[0];3'throw away'"]},
+        "hit":
+            {"action": "00There is nothing to hit!"},
+        "take":
+            {"subjobj": 1,
+            "action#takeable": "8self.inventory[self.fc['rooms'][str(self.roomnum)]['objects'][[i['name'] for i in self.fc['rooms'][str(self.roomnum)]['objects']].index(self.p['subjobj'][0][0])]['identifier']] = (self.inventory.get(self.p['subjobj'][0][0], [0])[0] + 1, self.fc['rooms'][str(self.roomnum)]['objects'][[i['name'] for i in self.fc['rooms'][str(self.roomnum)]['objects']].index(self.p['subjobj'][0][0])]);6~!!5[0];00You collected it and it is now in your inventory.;3'take'"},
+        "move":
+            {"move": 1,
+            "action": "12roomnum = 0;3'move'+str(self.roomnum)"},
+        "nothing":
+            {"action": "00You did nothing :)"},
+        "smash":
+            {"subjobj": 1,
+            "action#doable2": "6~!!5[0];00You smashed it and it broke into, like, a GAZILLION pieces!"},
+        "lift":
+            {"subjobj":1,
+            "action#doable" :"00You lifted it up. The only thing that happened is that you lifted it up."},
+        "play":
+            {"subjobj":1},
+        "sleep":
+            {"subjobj":1},
+        "push":
+            {"subjobj":1,
+            "action#doable":"00You pushed it. Nothing happened. What did you expect?"},
+        "snap":
+            {"subjobj":1,
+            "action#doable2":"5~!!5[0]!!eval(delete_numbers[1]) | {'identifier': 'part of a '+eval(delete_numbers[1])['name']};00You snapped it in half."},
+        "drink":
+            {"subjobj":1,
+            "action#drinkable":"00You drink the health potion and gain 50 health!;6~!!5[0];71hp = 050"},
+        "burn":
+            {"subjobj":1,
+            "action#doable2":"6~!!5[0];00You WATCHED IT BURRRRRRRN! :D"},
+        "open":
+            {"subjobj":1,
+            "action#chest":"6~!!5[0];00You opened it.;5~!!5sword = {'name': 'sword', 'identifier': 'sword', 'type': 5}",
+            "action#closet":"6~!!5[0];00You opened it.;5~!!5sword = {'name': 'ladder', 'identifier': 'ladder', 'type': 5}"},
+        "talk":
+            {"action#talkable": "00he says, 'what do you want to talk about?'",
+            "action": "00You talk to yourself. Great. Now what?"}
+}
