@@ -1,4 +1,4 @@
-#This is the game engine which is needed to run with an output version e.g Terminal.py 
+#This is the game engine which is needed to run with an output version e.g app.py 
 import json # reads the maps
 import os # for the clear function
 from random import choice # for the choice function so there are random events that happen, not the same ones all the time
