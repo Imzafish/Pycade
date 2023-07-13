@@ -5,8 +5,7 @@ from pygame.locals import *
 
 pygame.font.init()
 font = pygame.font.SysFont("Courier New", 40)
-pygame.display.set_caption('Title of window')
-
+pygame.display.set_caption('Tic Tac Toe')
 
 #Start Pygame
 pygame.init()
@@ -23,30 +22,23 @@ Black=(0,0,0)
 line_color = (255, 0, 0)
 
 
-def draw_line(screen, line_color, start_pos, end_pos):
-    # A function to draw a line on the screen
+def draw_X(screen, line_color, start_pos, end_pos):
+    # A function to draw a X on the screen
     pygame.draw.line(screen,line_color, start_pos, end_pos)
+    pygame.display.flip()
 
-def draw_square(screen, square_color, square_pos, square_size):
-    # A function to draw a square on the screen
-    pygame.draw.rect(screen, square_color, (square_pos[0], square_pos[1], square_size[0], square_size[1]))
-
+def draw_0(screen, Black, O_pos, width):
+    # A function to draw an 0 on the screen
+    pygame.draw.circle(screen, Black,O_pos,15, width=0)
+    pygame.display.flip()
 def main():
     # Create the screen object
     # The size is determined by the constant SCREEN_WIDTH and SCREEN_HEIGHT
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     # Fill the screen with white color
     screen.fill((255,255,255))
-    
-    # Draw two lines on the screen
-    draw_line(screen,line_color, (60, 80), (130, 100))
-    draw_line(screen,line_color, (80, 60), (100, 130))
-
-    # Draw a square on the screen
     square_pos = (25, 25)
     square_size = (25, 25)
-    draw_square(screen, Black, square_pos, square_size)
-
     # Update the display
     pygame.display.flip()
 
@@ -58,11 +50,13 @@ def main():
                 if pygame.mouse.get_pos():
                    if xTurn:
                     # draw x
-                    draw_square(screen,Black,pygame.mouse.get_pos(), square_size)
-                    pygame.display.flip()
+                    draw_X(screen,Black,pygame.mouse.get_pos(), square_size)
+                    xTurn = False
                    else:
                        # draw O
-                       print ("filler")
+                       draw_0(screen,Black,pygame.mouse.get_pos(), width=0)
+                       
+                       xTurn = True
             if events.type == QUIT:
                 sys.exit(0)
 main()
@@ -76,3 +70,7 @@ Line 2,8,23,8
 Line 2,16,23,16
 '''
 
+''' 
+  Draw two lines on the screen
+    draw_line(screen,line_color, (60, 80), (130, 100))
+    draw_line(screen,line_color, (80, 60), (100, 130))'''
