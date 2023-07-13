@@ -5,21 +5,7 @@ from pygame.locals import *
 
 pygame.font.init()
 font = pygame.font.SysFont("Courier New", 40)
-
-
-# Import pygame.locals for easier access to key coordinates
-# Updated to conform to flake8 and black standards
-from pygame.locals import (
-    K_UP,
-    K_DOWN,
-    K_LEFT,
-    K_RIGHT,
-    K_ESCAPE,
-    KEYDOWN,
-    QUIT,
-)
-#Online website said this is important
-
+pygame.display.set_caption('Title of window')
 
 
 #Start Pygame
@@ -76,8 +62,8 @@ def main():
                     pygame.display.flip()
                    else:
                        # draw O
-                       print (filler)
-                if events.type == QUIT:
+                       print ("filler")
+            if events.type == QUIT:
                 sys.exit(0)
 main()
 
