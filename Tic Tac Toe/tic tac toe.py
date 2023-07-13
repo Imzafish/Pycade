@@ -47,12 +47,13 @@ grid_draw()
 
 def draw_X(screen, line_color, start_pos, end_pos):
     # A function to draw a X on the screen
-    pygame.draw.line(screen,line_color, start_pos, end_pos)
+    pygame.draw.lines(screen, Black, True, [(start_pos[0]-50,start_pos[1]-50),(start_pos[0]+50,start_pos[1]+50)], 3)
+    pygame.draw.lines(screen, Black, True, [(start_pos[0]-50,start_pos[1]+50),(start_pos[0]+50,start_pos[1]-50)], 3)
     pygame.display.flip()
 
 def draw_0(screen, Black, O_pos, width):
     # A function to draw an 0 on the screen
-    pygame.draw.circle(screen, Black,O_pos,50, width=0)
+    pygame.draw.circle(screen, Black,O_pos,50, width=490)
     pygame.display.flip()
 def main():
     xTurn = True
