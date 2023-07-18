@@ -1,5 +1,9 @@
 ### GAMEMODE OF SPACE INVADERS 
 # Initialize Pygame
+import pygame
+import random
+import time
+
 pygame.init()
 
 # Set up the screen
