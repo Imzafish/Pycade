@@ -24,25 +24,80 @@ square_pos = (25, 25)
 square_size = (25, 25)
 # Update the display
 pygame.display.flip()
-Red=(255,0,0)
+
 
 Black=(0,0,0)
-def grid_draw():
-    print("Grid")
-    # Draw the tic-tac-toe grid
-    line_color = (0, 0, 0)  # Black
-    line_width = 5
+paddle_collision
+initial_ball_speed=1
+game_over = False
 
-    # Vertical lines
-    pygame.draw.line(screen, line_color, (SCREEN_WIDTH // 3, 0), (SCREEN_WIDTH // 3, SCREEN_HEIGHT), line_width)
-    pygame.draw.line(screen, line_color, (2 * SCREEN_WIDTH // 3, 0), (2 * SCREEN_WIDTH // 3, SCREEN_HEIGHT), line_width)
+# Initialize ball position, velocity, and scores
+ball_x, ball_y = square_pos / 2, square_size / 2
+ball_vx, ball_vy = initial_ball_speed, initial_ball_speed
+player1_score, player2_score = 0, 0
 
-    # Horizontal lines
-    pygame.draw.line(screen, line_color, (0, SCREEN_HEIGHT // 3), (SCREEN_WIDTH, SCREEN_HEIGHT // 3), line_width)
-    pygame.draw.line(screen, line_color, (0, 2 * SCREEN_HEIGHT // 3), (SCREEN_WIDTH, 2 * SCREEN_HEIGHT // 3), line_width)
-
-    # Update the display
+def reset_ball_position():
+    global ball_x, ball_y
+    ball_x, ball_y = square_pos / 2, square_size / 2
+    ball_vx, ball_vy = initial_ball_speed, initial_ball_speed
+    game_over = False
     pygame.display.flip()
-        
-grid_draw()
-#Deletted the link to th ecode ruinner extension?
+
+if paddle_collision==True:
+    def ball_hits_paddle():
+else:
+    print("No collision")
+
+
+def ball_hits_paddle():
+    
+        ball_vx *= -1  # Reverse horizontal velocity
+
+
+def handle_input():
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                player1_paddle.move_left()
+            if event.key == pygame.K_RIGHT:
+                player1_paddle.move_right()
+            if event.key == pygame.K_UP:
+                player2_paddle.move_up()
+            if event.key == pygame.K_DOWN:
+                player2_paddle.move_down()
+        if event.type == pygame.KEYUP:
+            if event.key == pygame.K_LEFT:
+                player1_paddle.stop_left()
+            if event.key == pygame.K_RIGHT:
+                player1_paddle.stop_right()
+            if event.key == pygame.K_UP:
+                player2_paddle.stop_up()
+            if event.key == pygame.K_DOWN:
+                player2_paddle.stop_down()
+
+# Game loop
+while not game_over:
+    # Handle input to move paddles
+    handle_input()
+
+    # Update ball position
+    ball_x += ball_vx
+    ball_y += ball_vy
+
+    # Check for collisions
+    if ball_hits_paddle(player1_paddle) or ball_hits_paddle(player2_paddle):
+        ball_vx *= -1  # Reverse horizontal velocity
+    elif ball_hits_wall():
+        ball_vy *= -1  # Reverse vertical velocity
+    elif ball_out_of_bounds():
+        if ball_x < 0:
+            player2_score += 1
+        else:
+            player1_score += 1
+        reset_ball_position()
+
+    # Render game state
+    render_game(player1_paddle, player2_paddle, ball, player1_score, player2_score)
