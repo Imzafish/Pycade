@@ -1,12 +1,12 @@
 import time
 import random
-gameselection = input("Choose a game to play: ") # add a colon and a space
-if gameselection.lower() == "space invaders": # move .lower() to the left and add a colon
+import subprocess
+
+gameselection = input("Choose a game to play: ")
+
+if gameselection.lower() == "space invaders":
     print("Game starting..")
-
-
-
-
+    subprocess.run(["python", "Space Invaders/space_invaders.py"])  # Replace "space_invaders.py" with the actual filename of the game
 
 
 

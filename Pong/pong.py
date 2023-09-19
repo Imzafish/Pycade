@@ -2,7 +2,6 @@ import random
 import time
 import pygame,sys
 from pygame.locals import *
-#????
 
 #Start Pygame
 pygame.font.init()
@@ -25,9 +24,18 @@ square_size = (25, 25)
 # Update the display
 pygame.display.flip()
 
+import pygame
 
+pygame.init()
+screen_info = pygame.display.Info()
+
+width = screen_info.current_w
+height = screen_info.current_h
+
+print("Screen size: {}x{}".format(width, height))
+
+pygame.quit()
 Black=(0,0,0)
-paddle_collision
 initial_ball_speed=1
 game_over = False
 
@@ -42,19 +50,19 @@ def reset_ball_position():
     ball_vx, ball_vy = initial_ball_speed, initial_ball_speed
     game_over = False
     pygame.display.flip()
+#I'm confused about this because it should be a function but maybe it should be earlier so it isn't written twice?
+print(ball_x, ball_y)
+def ball_hits_paddle():
+    ball_vx *= -1  # Reverse horizontal velocity, really intreasting maths in this
+
 
 if paddle_collision==True:
-    def ball_hits_paddle():
+    ball_hits_paddle()
+    
 else:
     print("No collision")
 
-
-def ball_hits_paddle():
-    
-        ball_vx *= -1  # Reverse horizontal velocity
-
-
-def handle_input():
+def handle_input(ball_mechanics):
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
@@ -100,4 +108,3 @@ while not game_over:
         reset_ball_position()
 
     # Render game state
-    render_game(player1_paddle, player2_paddle, ball, player1_score, player2_score)
