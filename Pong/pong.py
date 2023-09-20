@@ -3,6 +3,7 @@ import time
 import pygame,sys
 from pygame.locals import *
 
+
 #Start Pygame
 pygame.font.init()
 font = pygame.font.SysFont("Courier New", 40)
