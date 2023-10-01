@@ -39,19 +39,15 @@ pygame.quit()
 Black=(0,0,0)
 initial_ball_speed=1
 game_over = False
-
-# Initialize ball position, velocity, and scores
-ball_x, ball_y = square_pos / 2, square_size / 2
-ball_vx, ball_vy = initial_ball_speed, initial_ball_speed
-player1_score, player2_score = 0, 0
-
 def reset_ball_position():
     global ball_x, ball_y
     ball_x, ball_y = square_pos / 2, square_size / 2
     ball_vx, ball_vy = initial_ball_speed, initial_ball_speed
     game_over = False
     pygame.display.flip()
-#I'm confused about this because it should be a function but maybe it should be earlier so it isn't written twice?
+    
+reset_ball_position()
+
 print(ball_x, ball_y)
 def ball_hits_paddle():
     ball_vx *= -1  # Reverse horizontal velocity, really intreasting maths in this
