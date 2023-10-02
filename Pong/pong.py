@@ -34,7 +34,8 @@ width = screen_info.current_w
 height = screen_info.current_h
 
 print("Screen size: {}x{}".format(width, height))
-
+player1_paddle = Paddle(175, 400)
+player2_paddle = Paddle(175, 40)
 pygame.quit()
 Black=(0,0,0)
 initial_ball_speed=1
@@ -105,3 +106,4 @@ while not game_over:
         reset_ball_position()
 
     # Render game state
+
