@@ -34,8 +34,10 @@ width = screen_info.current_w
 height = screen_info.current_h
 
 print("Screen size: {}x{}".format(width, height))
-player1_paddle = Paddle(175, 400)
-player2_paddle = Paddle(175, 40)
+player1_paddle =(175, 400)
+player2_paddle = (175, 40)
+#Learn a class?
+#Looking at a friends code and saw classes
 pygame.quit()
 Black=(0,0,0)
 initial_ball_speed=1
