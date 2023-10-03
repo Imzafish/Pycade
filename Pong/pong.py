@@ -2,8 +2,17 @@ import random
 import time
 import pygame,sys
 from pygame.locals import *
+# Define paddle class
+class Paddle:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    def draw(self):
+        pygame.draw.rect(screen, (0, 0, 0), (self.x, self.y, 100, 10))
 
-
+player1_score=0
+player2_score=0
+    
 #Start Pygame
 pygame.font.init()
 font = pygame.font.SysFont("Courier New", 40)
@@ -25,6 +34,10 @@ square_size = (25, 25)
 # Update the display
 pygame.display.flip()
 
+# Initialize ball position, velocity, and scores
+ball_x, ball_y = square_pos[0] / 2, square_size[1] / 2
+ball_vx, ball_vy = 1, 1  # initial_ball_speed
+player1_score, player2_score = 0, 0
 import pygame
 
 pygame.init()
@@ -34,39 +47,26 @@ width = screen_info.current_w
 height = screen_info.current_h
 
 print("Screen size: {}x{}".format(width, height))
-# Define paddle class
-class Paddle:
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
-    def draw(self):
-        pygame.draw.rect(screen, (0, 0, 0), (self.x, self.y, 100, 10))
-        
-player1_paddle =(175, 400)
-player2_paddle = (175, 40)
+
+
+player1_paddle =Paddle(175, 400)
+player2_paddle = Paddle(175, 40)
 #Learn a class?
 #Looking at a friends code and saw classes
 pygame.quit()
 Black=(0,0,0)
 initial_ball_speed=1
 game_over = False
-def reset_ball_position():
-    global ball_x, ball_y
-    ball_x, ball_y = square_pos / 2, square_size / 2
-    ball_vx, ball_vy = initial_ball_speed, initial_ball_speed
-    game_over = False
-    pygame.display.flip()
-    
-reset_ball_position()
+
 
 print(ball_x, ball_y)
 def ball_hits_paddle():
     ball_vx *= -1  # Reverse horizontal velocity, really intreasting maths in this
 
+paddle_collision=False
 
 if paddle_collision==True:
-    ball_hits_paddle()
-    
+    ball_hits_paddle() 
 else:
     print("No collision")
 
@@ -99,7 +99,7 @@ while not game_over:
     # Handle input to move paddles
     handle_input()
 
-    # Update ball position
+''' # Update ball position
     ball_x += ball_vx
     ball_y += ball_vy
 
@@ -115,5 +115,5 @@ while not game_over:
             player1_score += 1
         reset_ball_position()
 
-    # Render game state
+    # Render game state'''
 
