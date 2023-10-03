@@ -3,6 +3,7 @@ import time
 import pygame,sys
 from pygame.locals import *
 # Define paddle class
+pygame.quit()
 class Paddle:
     def __init__(self, x, y):
         self.x = x
@@ -57,8 +58,6 @@ pygame.quit()
 Black=(0,0,0)
 initial_ball_speed=1
 game_over = False
-
-
 print(ball_x, ball_y)
 def ball_hits_paddle():
     ball_vx *= -1  # Reverse horizontal velocity, really intreasting maths in this
@@ -70,50 +69,40 @@ if paddle_collision==True:
 else:
     print("No collision")
 
-def handle_input(ball_mechanics):
+def handle_input():
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_LEFT:
-                player1_paddle.move_left()
-            if event.key == pygame.K_RIGHT:
-                player1_paddle.move_right()
-            if event.key == pygame.K_UP:
-                player2_paddle.move_up()
-            if event.key == pygame.K_DOWN:
-                player2_paddle.move_down()
-        if event.type == pygame.KEYUP:
-            if event.key == pygame.K_LEFT:
-                player1_paddle.stop_left()
-            if event.key == pygame.K_RIGHT:
-                player1_paddle.stop_right()
-            if event.key == pygame.K_UP:
-                player2_paddle.stop_up()
-            if event.key == pygame.K_DOWN:
-                player2_paddle.stop_down()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_LEFT:
+                    player1_paddle.move_left()
+                if event.key == pygame.K_RIGHT:
+                    player1_paddle.move_right()
+                if event.key == pygame.K_UP:
+                    player2_paddle.move_up()
+                if event.key == pygame.K_DOWN:
+                    player2_paddle.move_down()
+                if event.type == pygame.KEYUP:
+                    print("hi")
+                if event.key == pygame.K_LEFT:
+                    player1_paddle.stop_left()
+                if event.key == pygame.K_RIGHT:
+                    player1_paddle.stop_right()
+                if event.key == pygame.K_UP:
+                    player2_paddle.stop_up()
+                if event.key == pygame.K_DOWN:
+                    player2_paddle.stop_down()
 
 # Game loop
 while not game_over:
     # Handle input to move paddles
     handle_input()
 
-''' # Update ball position
+ # Update ball position
     ball_x += ball_vx
     ball_y += ball_vy
 
     # Check for collisions
     if ball_hits_paddle(player1_paddle) or ball_hits_paddle(player2_paddle):
         ball_vx *= -1  # Reverse horizontal velocity
-    elif ball_hits_wall():
-        ball_vy *= -1  # Reverse vertical velocity
-    elif ball_out_of_bounds():
-        if ball_x < 0:
-            player2_score += 1
-        else:
-            player1_score += 1
-        reset_ball_position()
-
-    # Render game state'''
+       # Render game state
 

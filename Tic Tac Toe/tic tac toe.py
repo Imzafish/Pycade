@@ -10,7 +10,6 @@ pygame.display.set_caption('Tic Tac Toe')
 pygame.init()
 
 
-
 # Define constants for the screen width and height
 SCREEN_WIDTH = 450
 SCREEN_HEIGHT = 450
@@ -52,11 +51,56 @@ def draw_X(screen, line_color, start_pos, end_pos):
     pygame.draw.lines(screen, Black, True, [(start_pos[0]-50,start_pos[1]-50),(start_pos[0]+50,start_pos[1]+50)], 3)
     pygame.draw.lines(screen, Black, True, [(start_pos[0]-50,start_pos[1]+50),(start_pos[0]+50,start_pos[1]-50)], 3)
     pygame.display.flip()
-
-def draw_0(screen, Black, O_pos, width):
-    # A function to draw an 0 on the screen
-    pygame.draw.circle(screen, Black,O_pos,50, width=490)
+#Win statement
+filled_squares = [['MT', 'MT', 'MT'], ['X', 'MT', 'MT'], ['MT', 'MT', 'MT']]
+def win_function():
+    if filled_squares[0][0] and filled_squares [0][1] and filled_squares [0][2]=="X" or "0":
+        if filled_squares[0][0]=="X":
+            print("X wins the game")
+        elif filled_squares[0][0]=="0":
+            print("0 wins the game")
+    elif filled_squares[1][0] and filled_squares [1][1] and filled_squares [1][2]=="X" or "0":
+        if filled_squares[1][0]=="X":
+            print("X wins the game")
+        elif filled_squares[1][0]=="0":
+            print("0 wins the game")
+    elif filled_squares [2][0] and filled_squares [2][1] and filled_squares [2][2]=="X" or "0":
+        if filled_squares [2][0]=="X":
+            print("X wins the game")
+        elif filled_squares [2][0]=="0":
+            print("0 wins the game")
+    elif filled_squares [0][0] and filled_squares [1][1] and filled_squares [2][2]=="X" or "0":
+        if filled_squares [0][0]=="X":
+            print("X wins the game")
+        elif filled_squares [0][0]=="0":
+            print("0 wins the game")
+    elif filled_squares [0][2] and filled_squares [1][1] and filled_squares [20][20]=="X" or "0":
+        if filled_squares [0][2]=="X":
+            print("X wins the game")
+        elif filled_squares [0][2]=="0":
+            print("0 wins the game")
+    elif filled_squares [0][0] and filled_squares [1][0] and filled_squares [2][0]=="X" or "0":
+        if filled_squares [0][0]=="X":
+            print("X wins the game")
+        elif filled_squares [0][0]=="0":
+            print("0 wins the game")
+    elif filled_squares [1][0] and filled_squares [1][1] and filled_squares [2][1]=="X" or "0":
+        if filled_squares [1][0]=="X":
+            print("X wins the game")
+        elif filled_squares [1][0]=="0":
+            print("0 wins the game")
+    elif filled_squares [0][2] and filled_squares [1][2] and filled_squares [2][2]=="X" or "0":
+        if filled_squares [0][2]=="X":
+            print("X wins the game")
+        elif filled_squares [0][2]=="0":
+            print("0 wins the game")
+win_function()
+def draw_0(screen, color, center, width):
+    # A function to draw a ring on the screen
+    #pygame.draw.circle(screen, color, center, radius, width)
+    pygame.draw.circle(screen, (0, 0, 0), pygame.mouse.get_pos(), 50, 2)
     pygame.display.flip()
+
 def main():
     xTurn = True
 
@@ -76,6 +120,14 @@ def main():
             if events.type == QUIT:
                 sys.exit(0)
 main()
+
+   
+
+
+win_function()
+
+
+
 '''
 Board- 25,25
 Square- 25,25
