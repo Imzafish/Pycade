@@ -137,3 +137,35 @@ Line 2,8,23,8
 Line 2,16,23,16
 '''
 
+'''def main():
+    xTurn = True
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if pygame.mouse.get_pos():
+                    mouse_x, mouse_y = pygame.mouse.get_pos()
+                    # Determine the grid position based on the clicked position
+                    if mouse_x < SCREEN_WIDTH // 3:
+                        col = 0
+                    elif mouse_x < 2 * SCREEN_WIDTH // 3:
+                        col = 1
+                    else:
+                        col = 2
+                    if mouse_y < SCREEN_HEIGHT // 3:
+                        row = 0
+                    elif mouse_y < 2 * SCREEN_HEIGHT // 3:
+                        row = 1
+                    else:
+                        row = 2
+                    # Update the filled_squares matrix with the corresponding position
+                    if xTurn:
+                        filled_squares[row][col] = 'X'
+                        draw_X(screen, Black, (col * SCREEN_WIDTH // 3 + SCREEN_WIDTH // 6, row * SCREEN_HEIGHT // 3 + SCREEN_HEIGHT // 6), square_size)
+                        xTurn = False
+                    else:
+                        filled_squares[row][col] = 'O'
+                        draw_0(screen, Black, (col * SCREEN_WIDTH // 3 + SCREEN_WIDTH // 6, row * SCREEN_HEIGHT // 3 + SCREEN_HEIGHT // 6), width=0)
+                        xTurn = True
+            if event.type == QUIT:
+                sys.exit(0)
+        pygame.display.update()'''
