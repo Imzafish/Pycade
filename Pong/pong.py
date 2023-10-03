@@ -34,6 +34,14 @@ width = screen_info.current_w
 height = screen_info.current_h
 
 print("Screen size: {}x{}".format(width, height))
+# Define paddle class
+class Paddle:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    def draw(self):
+        pygame.draw.rect(screen, (0, 0, 0), (self.x, self.y, 100, 10))
+        
 player1_paddle =(175, 400)
 player2_paddle = (175, 40)
 #Learn a class?
