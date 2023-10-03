@@ -144,7 +144,7 @@ Line 2,16,23,16
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if pygame.mouse.get_pos():
                     mouse_x, mouse_y = pygame.mouse.get_pos()
-                    # Determine the grid position based on the clicked position
+                    # Determine the grid position by dividing into thirds
                     if mouse_x < SCREEN_WIDTH // 3:
                         col = 0
                     elif mouse_x < 2 * SCREEN_WIDTH // 3:
@@ -157,7 +157,7 @@ Line 2,16,23,16
                         row = 1
                     else:
                         row = 2
-                    # Update the filled_squares matrix with the corresponding position
+                    # Update the filled_squares matrix
                     if xTurn:
                         filled_squares[row][col] = 'X'
                         draw_X(screen, Black, (col * SCREEN_WIDTH // 3 + SCREEN_WIDTH // 6, row * SCREEN_HEIGHT // 3 + SCREEN_HEIGHT // 6), square_size)
