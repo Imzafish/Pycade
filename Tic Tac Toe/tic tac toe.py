@@ -131,60 +131,68 @@ def win_function():
         elif filled_squares [0][2]=="0":
             print("0 wins the game")
 
+def click_event():
+    print("Filler")
+    
+
 
 def main():
     xTurn = True
     while True:
         for events in pygame.event.get():
             if events.type == pygame.MOUSEBUTTONDOWN:
+
                 if pygame.mouse.get_pos():
                    if xTurn:
-                    # draw x
-                    draw_X(screen,Black,pygame.mouse.get_pos(), square_size)
-                    if pygame.mouse.get_pos()==A:
-                        print("Filler")
-                    xTurn = False
+                        # draw x
+                        draw_X(screen,Black,findPos(), square_size)
+                        xTurn = False
                    else:
-                       # draw O
-                       draw_0(screen,Black,pygame.mouse.get_pos(), width=0)
-                       
-                       xTurn = True
+                        # draw O
+                        draw_0(screen,Black,findPos(), width=0)
+                        xTurn = True
+                #check if won here
             if events.type == QUIT:
                 sys.exit(0)
 grid_draw()
 main()
 win_function()
 
+def findPos():
+    var = pygame.mouse.get_pos().x
+    var2 = pygame.mouse.get_pos().y
+    if var <= 150:
+        if var2 <=150:
+            print("Top Right")
+            return (Box_Center_1)
 
-if var <= 150:
-    if var2 <=150:
-        list.append
-        print("Top Right")
-    elif var2 <=300:
-        list.append
-        print("Mid Right")
+        elif var2 <=300:
+            print("Mid Right")
+            return(Box_Center_4)
+        else:
+            print("Bottom Right")
+            return(Box_Center_7)
+    elif var <=300:
+        if var2 <=150:
+            print("Top mid")
+            return(Box_Center_2)
+        elif var2 <=300:
+            print("Mid mid")
+            return(Box_Center_4)
+        else:
+            print("Bottom Mid")
+            return(Box_Center_5)
     else:
-        print("Bottom Right")
-
-elif var <=300:
-    if var2 <=150:
-        list.append
-        print("Top mid")
-    elif var2 <=300:
-        list.append
-        print("Mid mid")
-    else:
-        print("Bottom Mid")
-else:
-    if var2 <=150:
-        list.append
-        print("Top Left")
-    elif var2 <=300:
-        list.append
-        print("Mid Left")
-    else:
-        print("Bottom Left")
-        
+        if var2 <=150:
+            print("Top Left")
+            return(Box_Center_3)
+        elif var2 <=300:
+            print("Mid Left")
+            return(Box_Center_6)
+        else:
+            print("Bottom Left")
+            return(Box_Center_9)
+            
 
 
 
