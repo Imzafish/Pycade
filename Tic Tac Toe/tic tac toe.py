@@ -8,15 +8,48 @@ pygame.font.init()
 font = pygame.font.SysFont("Courier New", 40)
 pygame.display.set_caption('Tic Tac Toe')
 pygame.init()
+icon = pygame.image.load('icon.png')
 
+# Set the icon
+pygame.display.set_icon(icon)
 
 # Define constants for the screen width and height
+#Keep it a square for it to work about 450x450 is a good size
 SCREEN_WIDTH = 450
 SCREEN_HEIGHT = 450
+A=SCREEN_HEIGHT//3
+B=SCREEN_HEIGHT//3
+
+Y=SCREEN_HEIGHT//6
+X=SCREEN_WIDTH//6
+print(str(X),"\n" + str(Y))
+Box_Center_1=(X*5,Y*1)
+Box_Center_2=(X*3,Y*1)
+Box_Center_3=(X*1,Y*1)
+Box_Center_4=(X*5,Y*3)
+Box_Center_5=(X*3,Y*3)
+Box_Center_6=(X*1,Y*3)
+Box_Center_7=(X*5,Y*5)
+Box_Center_8=(X*3,Y*5)
+Box_Center_9=(X*1,Y*5)
 
 
-    # Create the screen object
-    # The size is determined by the constant SCREEN_WIDTH and SCREEN_HEIGHT
+filled_squares = [['MT', 'MT', 'MT'], ['X', 'MT', 'MT'], ['MT', 'MT', 'MT']]
+
+
+'''
+With 
+SCREEN_WIDTH = 450
+SCREEN_HEIGHT = 450
+these are centers
+|375,75 |225,75 |75,75 |
+|375,255|225,225|75,225|
+|375,375|225,376|75,375|
+'''
+
+
+# Create the screen object
+# The size is determined by the constant SCREEN_WIDTH and SCREEN_HEIGHT
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 # Fill the screen with white color
 screen.fill((255,255,255))
@@ -28,7 +61,7 @@ Red=(255,0,0)
 
 Black=(0,0,0)
 def grid_draw():
-    print("Grid")
+    print("Grid drawing")
     # Draw the tic-tac-toe grid
     line_color = (0, 0, 0)  # Black
     line_width = 5
@@ -43,16 +76,19 @@ def grid_draw():
 
     # Update the display
     pygame.display.flip()
-        
-grid_draw()
-
+    
 def draw_X(screen, line_color, start_pos, end_pos):
     # A function to draw a X on the screen
     pygame.draw.lines(screen, Black, True, [(start_pos[0]-50,start_pos[1]-50),(start_pos[0]+50,start_pos[1]+50)], 3)
     pygame.draw.lines(screen, Black, True, [(start_pos[0]-50,start_pos[1]+50),(start_pos[0]+50,start_pos[1]-50)], 3)
     pygame.display.flip()
-#Win statement
-filled_squares = [['MT', 'MT', 'MT'], ['X', 'MT', 'MT'], ['MT', 'MT', 'MT']]
+
+def draw_0(screen, color, center, width):
+    # A function to draw a ring on the screen
+    #pygame.draw.circle(screen, color, center, radius, width)
+    pygame.draw.circle(screen, (0, 0, 0), pygame.mouse.get_pos(), 50, 2)
+    pygame.display.flip()
+
 def win_function():
     if filled_squares[0][0] and filled_squares [0][1] and filled_squares [0][2]=="X" or "0":
         if filled_squares[0][0]=="X":
@@ -94,16 +130,10 @@ def win_function():
             print("X wins the game")
         elif filled_squares [0][2]=="0":
             print("0 wins the game")
-win_function()
-def draw_0(screen, color, center, width):
-    # A function to draw a ring on the screen
-    #pygame.draw.circle(screen, color, center, radius, width)
-    pygame.draw.circle(screen, (0, 0, 0), pygame.mouse.get_pos(), 50, 2)
-    pygame.display.flip()
+
 
 def main():
     xTurn = True
-
     while True:
         for events in pygame.event.get():
             if events.type == pygame.MOUSEBUTTONDOWN:
@@ -111,6 +141,8 @@ def main():
                    if xTurn:
                     # draw x
                     draw_X(screen,Black,pygame.mouse.get_pos(), square_size)
+                    if pygame.mouse.get_pos()==A:
+                        print("Filler")
                     xTurn = False
                    else:
                        # draw O
@@ -119,12 +151,45 @@ def main():
                        xTurn = True
             if events.type == QUIT:
                 sys.exit(0)
+grid_draw()
 main()
-
-   
-
-
 win_function()
+
+
+if var <= 150:
+    if var2 <=150:
+        list.append
+        print("Top Right")
+    elif var2 <=300:
+        list.append
+        print("Mid Right")
+    else:
+        print("Bottom Right")
+
+elif var <=300:
+    if var2 <=150:
+        list.append
+        print("Top mid")
+    elif var2 <=300:
+        list.append
+        print("Mid mid")
+    else:
+        print("Bottom Mid")
+else:
+    if var2 <=150:
+        list.append
+        print("Top Left")
+    elif var2 <=300:
+        list.append
+        print("Mid Left")
+    else:
+        print("Bottom Left")
+        
+
+
+
+
+
 
 
 
@@ -136,36 +201,4 @@ Line 16,2,16,23
 Line 2,8,23,8
 Line 2,16,23,16
 '''
-
-'''def main():
-    xTurn = True
-    while True:
-        for event in pygame.event.get():
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                if pygame.mouse.get_pos():
-                    mouse_x, mouse_y = pygame.mouse.get_pos()
-                    # Determine the grid position by dividing into thirds
-                    if mouse_x < SCREEN_WIDTH // 3:
-                        col = 0
-                    elif mouse_x < 2 * SCREEN_WIDTH // 3:
-                        col = 1
-                    else:
-                        col = 2
-                    if mouse_y < SCREEN_HEIGHT // 3:
-                        row = 0
-                    elif mouse_y < 2 * SCREEN_HEIGHT // 3:
-                        row = 1
-                    else:
-                        row = 2
-                    # Update the filled_squares matrix
-                    if xTurn:
-                        filled_squares[row][col] = 'X'
-                        draw_X(screen, Black, (col * SCREEN_WIDTH // 3 + SCREEN_WIDTH // 6, row * SCREEN_HEIGHT // 3 + SCREEN_HEIGHT // 6), square_size)
-                        xTurn = False
-                    else:
-                        filled_squares[row][col] = 'O'
-                        draw_0(screen, Black, (col * SCREEN_WIDTH // 3 + SCREEN_WIDTH // 6, row * SCREEN_HEIGHT // 3 + SCREEN_HEIGHT // 6), width=0)
-                        xTurn = True
-            if event.type == QUIT:
-                sys.exit(0)
-        pygame.display.update()'''
+'''Middle box center 75,75'''
