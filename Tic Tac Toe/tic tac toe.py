@@ -29,7 +29,7 @@ Box_Center_8=(X*3,Y*5)
 Box_Center_9=(X*1,Y*5)
 
 
-filled_squares = [['MT', 'MT', 'MT'], ['X', 'MT', 'MT'], ['MT', 'MT', 'MT']]
+filled_squares = [['MT', 'MT', 'MT'], ['MT', 'MT', 'MT'], ['MT', 'MT', 'MT']]
 
 
 '''
@@ -85,82 +85,98 @@ def draw_0(screen, color, center, width):
     pygame.display.flip()
 
 def win_function():
-    if filled_squares[0][0] == filled_squares [0][1] == filled_squares [0][2]=="X" or "0":
+    if filled_squares[0][0] == filled_squares [0][1] == filled_squares [0][2]:
         if filled_squares[0][0]=="X":
             print("X wins the game")
         elif filled_squares[0][0]=="0":
             print("0 wins the game")
-    elif filled_squares[1][0] == filled_squares [1][1] == filled_squares [1][2]=="X" or "0":
+    elif filled_squares[1][0] == filled_squares [1][1] == filled_squares [1][2]:
         if filled_squares[1][0]=="X":
             print("X wins the game")
         elif filled_squares[1][0]=="0":
             print("0 wins the game")
-    elif filled_squares [2][0] == filled_squares [2][1] == filled_squares [2][2]=="X" or "0":
+    elif filled_squares [2][0] == filled_squares [2][1] == filled_squares [2][2]:
         if filled_squares [2][0]=="X":
             print("X wins the game")
         elif filled_squares [2][0]=="0":
             print("0 wins the game")
-    elif filled_squares [0][0] == filled_squares [1][1] == filled_squares [2][2]=="X" or "0":
+    elif filled_squares [0][0] == filled_squares [1][1] == filled_squares [2][2]:
         if filled_squares [0][0]=="X":
             print("X wins the game")
         elif filled_squares [0][0]=="0":
             print("0 wins the game")
-    elif filled_squares [0][2] == filled_squares [1][1] == filled_squares [20][20]=="X" or "0":
+    elif filled_squares [0][2] == filled_squares [1][1] == filled_squares [20][20]:
         if filled_squares [0][2]=="X":
             print("X wins the game")
         elif filled_squares [0][2]=="0":
             print("0 wins the game")
-    elif filled_squares [0][0] == filled_squares [1][0] == filled_squares [2][0]=="X" or "0":
+    elif filled_squares [0][0] == filled_squares [1][0] == filled_squares [2][0]:
         if filled_squares [0][0]=="X":
             print("X wins the game")
         elif filled_squares [0][0]=="0":
             print("0 wins the game")
-    elif filled_squares [1][0] == filled_squares [1][1] == filled_squares [2][1]=="X" or "0":
+    elif filled_squares [1][0] == filled_squares [1][1] == filled_squares [2][1]:
         if filled_squares [1][0]=="X":
             print("X wins the game")
         elif filled_squares [1][0]=="0":
             print("0 wins the game")
-    elif filled_squares [0][2] == filled_squares [1][2] == filled_squares [2][2]=="X" or "0":
+    elif filled_squares [0][2] == filled_squares [1][2] == filled_squares [2][2]:
         if filled_squares [0][2]=="X":
             print("X wins the game")
         elif filled_squares [0][2]=="0":
             print("0 wins the game")
 
-def findPos():
+#If turn is True its X turn, otherwise its O turn
+def findPos(turn):
     var = pygame.mouse.get_pos()[0]
     var2 = pygame.mouse.get_pos()[1]
     if var <= 150:
-        if var2 <=150:
+        if var2 <= 150:
             print("Top Left")
-            return Box_Center_3
 
-        elif var2 <=300:
+            if turn:
+                filled_squares[0][0]="X"
+            else:
+                filled_squares[0][0]="O"
+
+           
+            return Box_Center_3
+        elif var2 <= 300:
             print("Mid Left")
+            {True: filled_squares[1][0]=="X", False: filled_squares[1][0]=="O"}[turn]
             return Box_Center_6
+            
         else:
             print("Bottom Left")
+            {True: filled_squares[2][0]=="X", False: filled_squares[2][0]=="O"}[turn]
             return Box_Center_9
-    elif var <=300:
-        if var2 <=150:
-            print("Top mid")
+    elif var <= 300:
+        if var2 <= 150:
+            print("Top Mid")
+            {True: filled_squares[0][1]=="X", False: filled_squares[0][1]=="O"}[turn]
             return Box_Center_2
-        elif var2 <=300:
-            print("Mid mid")
-            return Box_Center_4
-        else:
-            print("Bottom Mid")
-            return Box_Center_8
-    else:
-        if var2 <=150:
-            print("Top Right")
-            return Box_Center_1
-        elif var2 <=300:
-            print("Mid Right")
+        elif var2 <= 300:
+            print("Mid Mid")
+            {True: filled_squares[1][1]=="X", False: filled_squares[1][1]=="O"}[turn]
             return Box_Center_5
         else:
+            print("Bottom Mid")
+            {True: filled_squares[2][1]=="X", False: filled_squares[2][1]=="O"}[turn]
+            return Box_Center_8
+    else:
+        if var2 <= 150:
+            print("Top Right")
+            {True: filled_squares[0][2]=="X", False: filled_squares[0][2]=="O"}[turn]
+            return Box_Center_1
+        elif var2 <= 300:
+            print("Mid Right")
+            {True: filled_squares[1][2]=="X", False: filled_squares[1][2]=="O"}[turn]
+            return Box_Center_4
+        else:
             print("Bottom Right")
+            {True: filled_squares[2][2]=="X", False: filled_squares[2][2]=="O"}[turn]
             return Box_Center_7
-            
+
 def main():
     xTurn = True
     while True:
@@ -168,19 +184,24 @@ def main():
             if events.type == pygame.MOUSEBUTTONDOWN:
                 if pygame.mouse.get_pos():
                    if xTurn:
-                        # draw x
-                        draw_X(screen,Black,findPos(), square_size)
+                        # draw x 
+                        draw_X(screen,Black,findPos(True), square_size)
                         xTurn = False
                    else:
                         # draw O
-                        draw_0(screen,Black,findPos(), width=0)
+                        draw_0(screen,Black,findPos(False), width=0)
                         xTurn = True
-                #Check if won here to be coded
+                win_function()
+                print(filled_squares)
             if events.type == QUIT:
                 sys.exit(0)
+
+# Call the main function
 grid_draw()
 main()
-win_function()
+grid_draw()
+main()
+
 
 
 
