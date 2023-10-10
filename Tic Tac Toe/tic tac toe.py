@@ -143,38 +143,69 @@ def findPos(turn):
             return Box_Center_3
         elif var2 <= 300:
             print("Mid Left")
-            {True: filled_squares[1][0]=="X", False: filled_squares[1][0]=="O"}[turn]
+            if turn:
+                filled_squares[1][0]="X"
+            else:
+                filled_squares[1][0]="O"
             return Box_Center_6
             
         else:
             print("Bottom Left")
             {True: filled_squares[2][0]=="X", False: filled_squares[2][0]=="O"}[turn]
+            if turn:
+                filled_squares[2][0]="X"
+            else:
+                filled_squares[2][0]="O"
             return Box_Center_9
     elif var <= 300:
         if var2 <= 150:
             print("Top Mid")
             {True: filled_squares[0][1]=="X", False: filled_squares[0][1]=="O"}[turn]
+            if turn:
+                filled_squares[0][1]="X"
+            else:
+                filled_squares[0][1]="O"
             return Box_Center_2
         elif var2 <= 300:
             print("Mid Mid")
             {True: filled_squares[1][1]=="X", False: filled_squares[1][1]=="O"}[turn]
+            if turn:
+                filled_squares[1][1]="X"
+            else:
+                filled_squares[1][1]="O"
             return Box_Center_5
         else:
             print("Bottom Mid")
             {True: filled_squares[2][1]=="X", False: filled_squares[2][1]=="O"}[turn]
+            if turn:
+                filled_squares[2][1]="X"
+            else:
+                filled_squares[2][1]="O"
             return Box_Center_8
     else:
         if var2 <= 150:
             print("Top Right")
             {True: filled_squares[0][2]=="X", False: filled_squares[0][2]=="O"}[turn]
+            if turn:
+                filled_squares[0][2]="X"
+            else:
+                filled_squares[0][2]="O"
             return Box_Center_1
         elif var2 <= 300:
             print("Mid Right")
             {True: filled_squares[1][2]=="X", False: filled_squares[1][2]=="O"}[turn]
+            if turn:
+                filled_squares[1][2]="X"
+            else:
+                filled_squares[1][2]="O"
             return Box_Center_4
         else:
             print("Bottom Right")
             {True: filled_squares[2][2]=="X", False: filled_squares[2][2]=="O"}[turn]
+            if turn:
+                filled_squares[1][1]="X"
+            else:
+                filled_squares[1][1]="O"
             return Box_Center_7
 
 def main():
